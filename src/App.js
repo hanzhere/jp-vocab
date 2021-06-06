@@ -32,7 +32,7 @@ function App() {
 		})
 
 		promise.then((d) => {
-			let fil = d.filter(word => word["第~か"] >= 4 && word["第~か"] <= 5)
+			let fil = d.filter(word => word["第~か"] >= 4 && word["第~か"] <= 5 && word["No"] !== 173 && word["No"] !== 174 && word["No"] !== 175 && word["No"] !== 176)
 			setVocabData(fil)
 		}).then(() => { setIsStart(true) })
 	}
@@ -49,7 +49,7 @@ function App() {
 	const handlePlay = e => {
 		e.preventDefault()
 		console.log(word)
-		console.log(currentWord)
+		console.log("-> " + currentWord["読み方"] + "  |  " + currentWord["ことば"])
 		if (word === currentWord["読み方"] || word === currentWord["ことば"]) {
 			setWord(() => '')
 			randomWord()
@@ -80,6 +80,13 @@ function App() {
 				{complishment === "NGU" && !isCorrect ?
 					< video src="video.mp4" width="50%" autoPlay controls onEnded={() => setIsCorrect(() => true)} ></video>
 					: null}
+
+				<a href="https://clustrmaps.com/site/1bib6" title="Visit tracker">
+					<img
+						style={{ display: 'none' }}
+						src="//www.clustrmaps.com/map_v2.png?d=RP02zliDV5BxQ7_Khati6f2STnDLCKMdS7_XLDDzubw&cl=ffffff"
+					/>
+				</a>
 			</div>
 		</div>
 	);
