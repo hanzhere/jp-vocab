@@ -1,8 +1,6 @@
 import './App.css';
 import * as XLSX from 'xlsx'
 import React, { useState, useEffect } from 'react'
-import ReactPlayer from 'react-player'
-// import video from '../media/M_03292018202006_00000000U2940605_1_001-1.MP4'
 
 function App() {
 	const [vocabData, setVocabData] = useState([])
@@ -66,6 +64,7 @@ function App() {
 	return (
 		<div className="App">
 			<div>
+				<p>dung file goc cua co cho</p>
 				<input type="file" id="input" onChange={(e) => {
 					const file = e.target.files[0]
 					readExcel(file)
