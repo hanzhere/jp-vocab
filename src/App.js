@@ -32,7 +32,7 @@ function App() {
 		})
 
 		promise.then((d) => {
-			let fil = d.filter(word => word["第~か"] >= 4 && word["第~か"] <= 5 && word["No"] !== 173 && word["No"] !== 174 && word["No"] !== 175 && word["No"] !== 176)
+			let fil = d.filter(word => word["第~か"] === 5 && word["No"] !== 173 && word["No"] !== 174 && word["No"] !== 175 && word["No"] !== 176)
 			setVocabData(fil)
 		}).then(() => { setIsStart(true) })
 	}
